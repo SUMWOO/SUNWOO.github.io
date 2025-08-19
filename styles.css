@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #c5a47e;
+    --secondary-color: #8a745b;
+    --card-bg-color: #2c2c2c;
+    /* 폰트 family를 Noto Serif KR로 변경 */
+    --font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.intro-text {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.bi-section {
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.bi-logo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bi-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 15px 0;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.update-section {
+    display: flex;
+    flex-wrap: wrap; /* 자식 요소들이 줄바꿈 되도록 설정 */
+    justify-content: center; /* 유의사항 박스를 중앙 정렬 */
+    gap: 30px;
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.section-main-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+}
+
+.update-section.reverse .section-main-content {
+    flex-direction: row-reverse;
+}
+
+/* 첫번째, 세번째 섹션은 row-reverse가 없으므로 좌우 배치 유지 */
+.update-section:not(.reverse) .section-main-content {
+    flex-direction: row;
+}
+
+.text-content, .image-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icon-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    color: var(--primary-color);
+}
+
+.text-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* sub-section 스타일 수정 */
+.sub-section {
+    margin-top: 25px;
+    padding-left: 15px;
+    border-left: 2px solid var(--primary-color); /* border 색상 및 두께 변경 */
+}
+
+.sub-section:first-of-type {
+    margin-top: 20px;
+}
+
+.sub-section h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color); /* 제목 색상 변경 */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+.text-content p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-top: 0;
+}
+
+.text-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.text-content li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+
+.highlight {
+    color: #a0a0a0;
+    font-weight: bold;
+}
+
+.highlight-new {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    flex: 1 0 100%;
+}
+
+.slide img,
+.image-content img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: var(--card-bg-color);
+}
+
+/* BI 이미지는 예외 처리 */
+.bi-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--secondary-color);
+}
+
+.footer p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 스토어 버튼 스타일 */
+.btn.btn-store {
+    background-color: #333;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    text-align: left;
+    width: 200px;
+}
+
+.btn.btn-store:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    border-color: var(--secondary-color);
+}
+
+.store-icon {
+    font-size: 32px; /* 아이콘 크기 조정 */
+    line-height: 1;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.btn-text span {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.btn-text strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+/* 유의사항 박스 스타일 */
+.notice-box {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%; /* 너비를 100%로 설정 */
+    box-sizing: border-box; /* 패딩을 너비에 포함 */
+}
+
+.notice-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.notice-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.notice-box p strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .slide img,
+    .image-content img {
+        height: 200px;
+    }
+    .bi-section {
+        margin-bottom: 30px;
+    }
+    .bi-logo {
+        padding: 0 15px;
+    }
+    .bi-image {
+        max-width: 280px;
+    }
+    .intro-text h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .intro-text p {
+        font-size: 1.1rem;
+    }
+    .section-main-content, 
+    .update-section:not(.reverse) .section-main-content,
+    .update-section.reverse .section-main-content {
+        flex-direction: column;
+    }
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+    .sub-section h4 {
+        font-size: 1.2rem;
+    }
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn.btn-store {
+        width: 70%;
+        justify-content: center;
+    }
+}
+
+/* Top 버튼 스타일 */
+.top-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px 10px;
+    width: 60px;
+    height: 70px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.top-button i {
+    font-size: 16px;
+    margin-top: -2px;
+}
+
+.top-button span {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.top-button .small-text {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.top-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .top-button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 58px;
+        padding: 12px 8px;
+        gap: 3px;
+    }
+    
+    .top-button i {
+        font-size: 14px;
+    }
+    
+    .top-button span {
+        font-size: 12px;
+    }
+    
+    .top-button .small-text {
+        font-size: 8px;
+    }
+}
