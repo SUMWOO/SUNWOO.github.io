@@ -5,7 +5,7 @@
     --text-color: #e0e0e0;
     --primary-color: #c5a47e;
     --secondary-color: #8a745b;
-    --card-bg-color: #2c2c2c;
+    --card-bg-color: rgba(26, 26, 26, 0.85);
     /* 폰트 family를 Noto Serif KR로 변경 */
     --font-family: 'Noto Sans KR', sans-serif;
 }
@@ -16,22 +16,50 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.7;
+    position: relative;
 }
 
+/* 배경 이미지 래퍼 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://file.pmang.com/ksw_test/robby_2025.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25; /* 투명도 높임 */
+    z-index: -1;
+}
+
+/* 컨텐츠 래퍼 */
 .container {
+    position: relative;
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px 20px; /* 상단 패딩 축소 */
+    background-color: transparent;
+}
+
+/* 섹션 배경색 유지를 위한 추가 스타일 */
+.update-section {
+    background: linear-gradient(to bottom right, rgba(26, 26, 26, 0.9), rgba(44, 44, 44, 0.85));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .intro-text {
     text-align: center;
     padding: 0 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* 하단 여백 축소 */
 }
 
 .bi-section {
-    margin-bottom: 50px;
+    margin: -10px 0 10px; /* 하단 마진 더 축소 */
     padding: 0;
 }
 
@@ -42,7 +70,7 @@ body {
 }
 
 .bi-image {
-    max-width: 400px;
+    max-width: 300px; /* 로고 크기 축소 */
     width: 100%;
     height: auto;
     display: block;
@@ -50,10 +78,13 @@ body {
 }
 
 .intro-text h2 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 3.5rem; /* 제목 크기 대폭 증가 */
+    font-weight: 900; /* 더 굵게 */
     color: var(--primary-color);
     margin: 0 0 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 텍스트 그림자 추가 */
+    letter-spacing: -0.02em; /* 자간 조정 */
+    line-height: 1.2; /* 줄간격 조정 */
 }
 
 .intro-text p {
@@ -67,7 +98,8 @@ body {
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px; /* 섹션 간격 축소 */
+    margin-top: -10px; /* 위로 올림 */
 }
 
 section {
@@ -95,12 +127,7 @@ section {
     width: 100%;
 }
 
-.update-section.reverse .section-main-content {
-    flex-direction: row-reverse;
-}
-
-/* 첫번째, 세번째 섹션은 row-reverse가 없으므로 좌우 배치 유지 */
-.update-section:not(.reverse) .section-main-content {
+.section-main-content {
     flex-direction: row;
 }
 
@@ -166,9 +193,10 @@ section {
 .text-content li {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 10px 15px;
     border-radius: 6px;
+    border: 1px solid rgba(197, 164, 126, 0.1); /* primary-color와 동일한 색상에 투명도 적용 */
 }
 
 
@@ -293,7 +321,7 @@ section {
 
 .store-icon,
 .fa-house {
-    font-size: 32px; /* 아이콘 크기 통일 */
+    font-size: 28px; /* 아이콘 크기 통일 */
     line-height: 1;
     color: #fff;
     flex-shrink: 0;
@@ -335,8 +363,9 @@ section {
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 100%; /* 너비를 100%로 설정 */
-    box-sizing: border-box; /* 패딩을 너비에 포함 */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
 }
 
 .notice-icon {
@@ -379,6 +408,15 @@ section {
 
 /* 모바일 반응형 디자인 */
 @media (max-width: 768px) {
+    .notice-box {
+        padding: 15px;
+        margin-top: 20px;
+        max-width: calc(100% + 40px); /* 모바일에서는 패딩 값 조정 */
+    }
+    
+    .notice-box p {
+        font-size: 0.9rem;
+    }
     .container {
         padding: 10px;
     }
@@ -435,11 +473,6 @@ section {
     
     .update-section {
         flex-direction: column;
-    }
-    
-    .image-content {
-        order: -1; /* 이미지를 항상 위로 배치 */
-        margin-bottom: 20px;
     }
     
     .text-content {
@@ -516,6 +549,243 @@ section {
     
     .btn-text span {
         font-size: 0.85rem;
+    }
+}
+
+/* 햄버거 메뉴 스타일 */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.menu-header h3 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-menu {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.close-menu:hover {
+    transform: scale(1.1);
+}
+
+.update-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.update-list li {
+    padding: 15px 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(197, 164, 126, 0.1);
+}
+
+.update-list li:hover {
+    background: rgba(197, 164, 126, 0.1);
+    color: var(--primary-color);
+}
+
+.update-list li.active {
+    background: rgba(197, 164, 126, 0.2);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* FAQ 섹션 스타일 */
+.faq-section {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-toggle {
+    width: 280px;
+    background: linear-gradient(to right, rgba(197, 164, 126, 0.1), rgba(138, 116, 91, 0.1));
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 12px 30px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.faq-toggle:hover {
+    background: linear-gradient(to right, rgba(197, 164, 126, 0.2), rgba(138, 116, 91, 0.2));
+}
+
+.faq-toggle .fa-question-circle {
+    font-size: 1.4rem;
+}
+
+.faq-toggle .toggle-icon {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(197, 164, 126, 0.2);
+}
+
+.faq-header i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.faq-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(197, 164, 126, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(197, 164, 126, 0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    padding: 15px 20px;
+    background: linear-gradient(to right, rgba(197, 164, 126, 0.1), rgba(138, 116, 91, 0.1));
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.faq-answer {
+    padding: 20px;
+    color: #b0b0b0;
+    line-height: 1.6;
+    border-top: 1px solid rgba(197, 164, 126, 0.1);
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 20px;
+    }
+
+    .faq-header {
+        margin-bottom: 20px;
+    }
+
+    .faq-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    .faq-answer {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-toggle {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+
+    .faq-question {
+        padding: 12px 15px;
+    }
+
+    .faq-answer {
+        padding: 12px 15px;
+        font-size: 0.95rem;
     }
 }
 

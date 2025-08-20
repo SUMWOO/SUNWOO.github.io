@@ -1,27 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <script src="https://static.pmang.com/lib/pmang-gnb-footer.js" charset="UTF-8"></script>
-<script>
-pmang.ui.domReady(function() {
-    // 모바일 환경 체크
-    var isMobile = window.innerWidth <= 768;
-    pmang.ui.footer({ 
-        type: isMobile ? 'mobile' : 'narrow',  // 모바일일 경우 mobile 타입으로 변경
-        simple: true,
-        responsive: true  // 반응형 옵션 활성화
-    });
-    
-    // 화면 크기 변경 시 푸터 타입 업데이트
-    window.addEventListener('resize', function() {
-        var isMobile = window.innerWidth <= 768;
-        pmang.ui.footer({ 
-            type: isMobile ? 'mobile' : 'narrow',
-            simple: true,
-            responsive: true
-        });
-    });
-});
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,10 +13,35 @@ pmang.ui.domReady(function() {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <!-- 햄버거 메뉴 버튼 -->
+    <button class="menu-toggle" aria-label="메뉴 열기">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- 사이드 메뉴 -->
+    <nav class="side-menu">
+        <div class="menu-header">
+            <h4>피망 섯다 업데이트 내역</h4>
+            <button class="close-menu" aria-label="메뉴 닫기">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="update-list">
+            <li class="active" data-month="8">2025년 8월 업데이트</li>
+            <li data-month="7">2025년 7월 업데이트</li>
+            <li data-month="6">2025년 6월 업데이트</li>
+            <li data-month="5">2025년 5월 업데이트</li>
+            <li data-month="4">2025년 4월 업데이트</li>
+            <li data-month="3">2025년 3월 업데이트</li>
+            <li data-month="2">2025년 2월 업데이트</li>
+            <li data-month="1">2025년 1월 업데이트</li>
+        </ul>
+    </nav>
+
     <div class="container">
         <section class="bi-section">
             <div class="bi-logo">
-                <img src="https://file.pmang.com/ksw_test/sudda_BI_2025.jpg" alt="섯다 BI가 들어갈 영역" class="bi-image">
+                <img src="https://file.pmang.com/ksw_test/sudda_BI_2025-removebg.png" alt="섯다 BI가 들어갈 영역" class="bi-image">
             </div>
         </section>
         <div class="intro-text">
@@ -49,15 +52,16 @@ pmang.ui.domReady(function() {
         <main class="main-content">
             <!-- 디자인 컨셉 변경 섹션 -->
             <section class="update-section">
-                <div class="text-content">
-                    <div class="icon-title">
-                        <h3>차원이 다른 품격, 새로운 디자인.</h3>
+                <div class="section-main-content">
+                    <div class="text-content">
+                        <div class="icon-title">
+                            <h3>새로운 디자인,차원이 다른 품격.</h3>
                     </div>
                     <p>세련되고 품격 있는 비주얼로 새롭게 태어났습니다.</p>
                     <ul>
                         <li> 몰입감을 극대화하는 <span class="highlight-new">매혹적</span>인 캐릭터</li>
-                        <li> 전통미와 <span class="highlight-new">스타일리쉬함</span>의 조화</li>
-                        <li> 세번째로 <span class="highlight-new">강조할</span> 내용을 적습니다</li>
+                        <li> 전통미와 <span class="highlight-new">스타일리시함</span>의 조화</li>
+                        <li> 로비화면을 <span class="highlight-new"> 세련</span>되고 깔끔하게 개편</li>
                     </ul>
                 </div>
                 <div class="image-content">
@@ -83,26 +87,31 @@ pmang.ui.domReady(function() {
             </section>
 
             <!-- 재화 분리 섹션 -->
-            <section class="update-section reverse">
-                <div class="text-content">
-                     <div class="icon-title">
-                        <h3>게임 재화, 이렇게 바뀝니다.</h3>
+            <section class="update-section">
+                <div class="section-main-content">
+                    <div class="text-content">
+                        <div class="icon-title">
+                            <h3>게임 재화, 이렇게 바뀝니다.</h3>
+                        </div>
+                        <p>이제 포커와 재화를 공유하지 않고, 섯다 전용 재화인 <span class="highlight-new">'금'</span>을 사용합니다.</p>
+                        <ul>
+                            <li><span class="highlight"> 기존 골드 </span>  →  <span class="highlight-new">금</span> 으로 전환됩니다. </li>
+                            <li><span class="highlight"> 기존 루비 </span>  →  <span class="highlight-new">다이아</span> 로 전환됩니다. (뉴맞고와 함께 사용)</li>
+                            <li><span class="highlight"> 클로버 </span> → <span class="highlight-new">신규추가</span> (뉴맞고와 함께 사용)</li>
+                            <li><span class="highlight"> 기존 티켓 </span> → <span class="highlight-new">사용 종료</span> (포커에서 사용 가능)</li>
+                        </ul>
                     </div>
-                    <p>이제 포커와 재화를 공유하지 않고, 섯다 전용 재화인 <span class="highlight-new">'금'</span>을 사용합니다.</p>
-                    <ul>
-                        <li><span class="highlight"> 기존 골드 </span>  →  <span class="highlight-new">금 </span> 으로 전환됩니다. </li>
-                        <li><span class="highlight"> 기존 루비 </span>  →  <span class="highlight-new">다이아 </span> 로 전환됩니다. (뉴맞고와 함께 사용)</li>
-                        <li><span class="highlight"> 클로버 </span> → <span class="highlight-new">신규추가 </span> (뉴맞고와 함께 사용)</li>
-                        <li><span class="highlight"> 기존 티켓 </span> → <span class="highlight-new">사용 종료</span> (포커에서 사용 가능)</li>
-                    </ul>
+                    <div class="image-content">
+                        <img src="https://placehold.co/600x400/333333/FFFFFF?text=재화+이미지" alt="새로운 재화 이미지">
+                    </div>
                 </div>
-                 <div class="image-content">
-                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=재화+이미지" alt="새로운 재화 이미지">
-                </div>
-                 <!-- 유의사항 박스 위치 이동 -->
-                 <div class="notice-box">
-                    <p><strong>참고:</strong> 재화 복사(골드,루비)는 1:1로 전환되며, 점검 이후 접속 시 자동 전환됩니다.
-                    <br>기존에 보유하신 골드와 루비는 포커에서 그대로 사용 가능합니다.</br> 
+                <!-- 유의사항 박스 위치 이동 -->
+                <div class="notice-box">
+                    <p><strong>NOTICE</strong> 
+                    <br> - 재화 전환(골드,루비) 비율은 1:1 이며, 점검 이후 접속 시 자동 전환됩니다.
+                    <br> - 기존 보유하신 골드와 루비는 포커에서 그대로 사용 가능합니다.
+                    <br> - 섯다에서는 피망보너스 적립 및 사용이 불가능합니다.
+                    </p>
                 </div>
             </section>
 
@@ -118,14 +127,16 @@ pmang.ui.domReady(function() {
             <div class="sub-section">
                 <h4>기존 클래스 이용자</h4>
                 <p>
-                    여기에 내용을 적습니다.
+                    해지 전까지 기존 포커/섯다 클래스 혜택이 그대로 유지되며, 
+                    <br>골드와 동일한 양의 <span class="highlight-new">'금'</span>이 추가로 지급됩니다.
                 </p>
             </div>
 
             <div class="sub-section">
                 <h4>신규 섯다 클래스 이용자</h4>
                 <p>
-                    여기에 내용을 적습니다.
+                    포커칩 한도상향, 훌라 딜러비 할인 등 포커 관련 혜택이 제외된 
+                    <br><span class="highlight-new">섯다 전용 신규 클래스</span>가 제공됩니다.
                 </p>
             </div>
         </div>
@@ -135,21 +146,93 @@ pmang.ui.domReady(function() {
     </div>
 </section>
 
-            <!-- 무료 리필 강화 섹션 -->
-            <section class="update-section reverse">
-                <div class="text-content">
-                    <div class="icon-title">
-                        <h3>무료 리필혜택 강화</h3>
+            <!--  혜택 안내 강화 섹션 -->
+            <section class="update-section">
+                <div class="section-main-content">
+                    <div class="text-content">
+                        <div class="icon-title">
+                            <h3>보다 풍성해진 혜택</h3>
                     </div>
-                    <p>부담 없이 마음껏 즐기실 수 있도록 무료 리필 혜택을 대폭 강화했습니다. </p>
+                    <p> 섯다의 다양한 콘텐츠가 개선되고, 새로운 혜택이 추가됩니다. </p>
                      <ul>
-                        <li>리필 금액 <span class="highlight-new">50억 금</span>으로 상향<br>
-                            (하우 PC방에서는 100억 '금' 지급!)</li>
-                        <li>섯다 전용 리필 <span class="highlight-new">하루 8회</span> 제공!</li>
+                        <li>리필 금액 <span class="highlight-new">50억 금</span>으로 상향
+                            <br>(하우 PC방에서는 100억 '금' 지급)</li>
+                        <li>섯다 전용 리필 <span class="highlight-new">하루 8회</span> 제공</li>
+                        <li> <span class="highlight-new">신규/복귀 유저</span> 혜택 강화</li>
+                        <li> <span class="highlight-new">출석부 혜택</span> 업그레이드 </li>
                     </ul>
                 </div>
                  <div class="image-content">
-                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=무료+리필" alt="무료 리필 이미지">
+                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=혜택+안내" alt="혜택 안내 이미지">
+                </div>
+            </section>
+
+            <!-- FAQ 섹션 -->
+            <section class="faq-section">
+                <button class="faq-toggle">
+                    <i class="fas fa-question-circle"></i>
+                    자주 묻는 질문 (FAQ)
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>골드가 금으로, 루비가 다이아로 전환된다고 했는데, 내 자산은 어디서 확인할 수 있나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            점검 이후 각 게임(포커/섯다) 내 자산 메뉴에서 변경된 금액을 확인하실 수 있습니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>재화 전환은 여러 번 할 수 있나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            재화 전환(골드, 루비)은 점검 이후 접속 시 최초 1회 만 진행되며, 중복 전환은 불가능합니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>티켓월드 서비스가 종료되면 기존에 보유한 티켓은 어떻게 되나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            섯다에서의 티켓월드 서비스는 종료되지만, '피망 포커'에서 계속 사용이 가능합니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>클로버는 무엇이고, 어디서 사용할 수 있나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                             클로버는 피망 뉴맞고와 섯다에서 함께 사용하실 수 있는 재화입니다. 
+                            <br>섯다에서는 오늘의 운세, 프로필 구매에 사용하실 수 있으며, 피망 뉴맞고 행복마트에서도 사용 가능합니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>루비가 다이아로 전환되면 뉴맞고에서 이미 보유하던 다이아와 통합되나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            네, 뉴맞고와 섯다의 다이아는 통합됩니다. 
+                            <br>예를 들어, 뉴맞고에서 다이아 10개, 섯다에서 루비 10개를 보유하고 계셨다면 재화전환 후 다이아가 20개로 통합됩니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>카카오 버전 섯다도 게임 재화가 전환되나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            아니오, 카카오 버전은 재화를 공유하지 않으므로, 전환 대상이 아닙니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>해지 후 다시 클래스를 결제하면 혜택이 연속 적용되나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            해지 후 재결제 시 연속 혜택 적용 여부는 케이스에 따라 다를 수 있으니, 자세한 사항은 고객센터로 문의해 주시기 바랍니다.
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -182,15 +265,9 @@ pmang.ui.domReady(function() {
                 </a>
             </div>
         </footer>
-        <script src="https://static.pmang.com/lib/pmang-gnb-footer.js" charset="UTF-8"></script>
-<script>
-pmang.ui.domReady(function() {
-    pmang.ui.gnb({ type: "simple-pmang" }); // GNB 추가
-    pmang.ui.footer({ type: 'narrow', simple: true });
-});
-
-// 슬라이더 기능 구현
-document.addEventListener('DOMContentLoaded', function() {
+        <script>
+            // 슬라이더 기능 구현
+            document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.slider-dot');
@@ -236,6 +313,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // 초기 자동 슬라이드 시작
     startSlideShow();
 });
+
+    // 햄버거 메뉴 동작
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeMenu = document.querySelector('.close-menu');
+    const sideMenu = document.querySelector('.side-menu');
+    const updateList = document.querySelectorAll('.update-list li');
+
+    menuToggle.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+    });
+
+    // 메뉴 항목 클릭 이벤트
+    updateList.forEach(item => {
+        item.addEventListener('click', () => {
+            // 활성화된 항목 변경
+            updateList.forEach(li => li.classList.remove('active'));
+            item.classList.add('active');
+            
+            // 여기에 각 월별 콘텐츠를 보여주는 로직 추가 예정
+            const month = item.getAttribute('data-month');
+            console.log(`${month}월 업데이트 내용 표시`);
+            
+            // 모바일에서 메뉴 닫기
+            sideMenu.classList.remove('active');
+        });
+    });
+
+    // FAQ 토글 버튼 동작
+    const faqToggle = document.querySelector('.faq-toggle');
+    const faqContent = document.querySelector('.faq-content');
+
+    faqToggle.addEventListener('click', () => {
+        faqToggle.classList.toggle('active');
+        if (faqContent.style.display === 'none' || !faqContent.style.display) {
+            faqContent.style.display = 'block';
+        } else {
+            faqContent.style.display = 'none';
+        }
+    });
 </script>
     </div>
     <button id="topButton" class="top-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
