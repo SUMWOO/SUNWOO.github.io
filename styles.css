@@ -291,11 +291,20 @@ section {
     border-color: var(--secondary-color);
 }
 
-.store-icon {
-    font-size: 32px; /* 아이콘 크기 조정 */
+.store-icon,
+.fa-house {
+    font-size: 32px; /* 아이콘 크기 통일 */
     line-height: 1;
     color: #fff;
     flex-shrink: 0;
+}
+
+/* 모바일에서 아이콘 크기 조정 */
+@media (max-width: 768px) {
+    .store-icon,
+    .fa-house {
+        font-size: 28px;
+    }
 }
 
 .btn-text {
