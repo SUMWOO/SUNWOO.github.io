@@ -342,46 +342,148 @@ body {
     font-weight: 700;
 }
 
-/* 반응형 디자인 */
+/* 태블릿 반응형 디자인 */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .update-section {
+        padding: 30px;
+    }
+    
+    .text-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .btn.btn-store {
+        width: 180px;
+    }
+}
+
+/* 모바일 반응형 디자인 */
 @media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .update-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
     .slide img,
     .image-content img {
         height: 200px;
     }
+    
     .bi-section {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
+    
     .bi-logo {
-        padding: 0 15px;
+        padding: 0 10px;
     }
+    
     .bi-image {
-        max-width: 280px;
+        max-width: 250px;
     }
+    
+    .intro-text {
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    
     .intro-text h2 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
     }
+    
     .intro-text p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.5;
     }
+    
     .section-main-content, 
     .update-section:not(.reverse) .section-main-content,
     .update-section.reverse .section-main-content {
         flex-direction: column;
+        gap: 20px;
     }
+    
+    .text-content {
+        padding: 0;
+    }
+    
     .text-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
+    
+    .text-content p {
+        font-size: 1rem;
+    }
+    
+    .text-content li {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+    }
+    
+    .sub-section {
+        margin-top: 20px;
+        padding-left: 12px;
+    }
+    
     .sub-section h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
+    
+    .highlight-new {
+        font-size: 1.1rem;
+    }
+    
+    .notice-box {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .notice-box p {
+        font-size: 0.9rem;
+    }
+    
+    .footer {
+        padding: 30px 15px;
+        margin-top: 30px;
+    }
+    
+    .footer p {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
     .button-group {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
+    
     .btn.btn-store {
-        width: 70%;
+        width: 100%;
+        max-width: 280px;
         justify-content: center;
+        padding: 10px 20px;
+    }
+    
+    .store-icon {
+        font-size: 28px;
+    }
+    
+    .btn-text strong {
+        font-size: 1.1rem;
+    }
+    
+    .btn-text span {
+        font-size: 0.85rem;
     }
 }
 
