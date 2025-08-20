@@ -411,8 +411,18 @@ body {
         gap: 20px;
     }
     
+    .update-section {
+        flex-direction: column;
+    }
+    
+    .image-content {
+        order: -1; /* 이미지를 항상 위로 배치 */
+        margin-bottom: 20px;
+    }
+    
     .text-content {
         padding: 0;
+        width: 100%;
     }
     
     .text-content h3 {
