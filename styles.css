@@ -70,10 +70,17 @@ body {
     gap: 50px;
 }
 
+section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+}
+
 .update-section {
     display: flex;
-    flex-wrap: wrap; /* 자식 요소들이 줄바꿈 되도록 설정 */
-    justify-content: center; /* 유의사항 박스를 중앙 정렬 */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     background-color: var(--card-bg-color);
     padding: 40px;
@@ -366,6 +373,11 @@ body {
     .container {
         padding: 10px;
     }
+
+    section {
+        flex-direction: column;
+        padding: 20px 0;
+    }
     
     .update-section {
         padding: 20px;
@@ -379,6 +391,7 @@ body {
     
     .bi-section {
         margin-bottom: 20px;
+        padding: 0;
     }
     
     .bi-logo {
