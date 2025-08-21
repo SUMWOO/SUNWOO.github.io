@@ -845,9 +845,16 @@ div[class^="wrapper"] {
     background: transparent !important;
 }
 
-/* 푸터 자체 */
+/* 푸터 자체와 하단 로고 숨기기 */
 div[class^="footer"] {
     background: transparent !important;
+}
+
+/* 푸터의 피망 로고 숨기기 */
+div[class^="footer"] div[class^="pmang"],
+div[class^="footer"] img[class*="pmang"],
+div[class^="footer"] a[href*="pmang.com"] {
+    display: none !important;
 }
 
 /* GNB 부모와 메인 컨테이너 투명하게 */
