@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script src="https://static.pmang.com/lib/pmang-gnb-footer.js" charset="UTF-8"></script>
+    <script>
+    pmang.ui.domReady(function() {
+    pmang.ui.gnb({ type: "simple-pmang" }); // GNB 추가
+    pmang.ui.footer({ type: 'narrow', simple: true });
+    });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>피망 섯다 | 새로운 여정의 시작</title>
@@ -13,30 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <!-- 햄버거 메뉴 버튼 -->
-    <button class="menu-toggle" aria-label="메뉴 열기">
-        <i class="fas fa-bars"></i>
-    </button>
 
-    <!-- 사이드 메뉴 -->
-    <nav class="side-menu">
-        <div class="menu-header">
-            <h4>피망 섯다 업데이트 내역</h4>
-            <button class="close-menu" aria-label="메뉴 닫기">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <ul class="update-list">
-            <li class="active" data-month="8">2025년 8월 업데이트</li>
-            <li data-month="7">2025년 7월 업데이트</li>
-            <li data-month="6">2025년 6월 업데이트</li>
-            <li data-month="5">2025년 5월 업데이트</li>
-            <li data-month="4">2025년 4월 업데이트</li>
-            <li data-month="3">2025년 3월 업데이트</li>
-            <li data-month="2">2025년 2월 업데이트</li>
-            <li data-month="1">2025년 1월 업데이트</li>
-        </ul>
-    </nav>
 
     <div class="container">
         <section class="bi-section">
@@ -68,13 +52,13 @@
                     <div class="slider-container">
                         <div class="slider">
                             <div class="slide">
-                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터1" alt="avatar 1">
+                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터1" alt="섯다 캐릭터1">
                             </div>
                             <div class="slide">
-                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터2" alt="avatar 2">
+                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터2" alt="섯다 캐릭터2">
                             </div>
                             <div class="slide">
-                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터3" alt="avatar 3">
+                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터3" alt="섯다 캐릭터3">
                             </div>
                         </div>
                         <div class="slider-nav">
@@ -102,14 +86,14 @@
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img src="https://placehold.co/600x400/333333/FFFFFF?text=재화+이미지" alt="새로운 재화 이미지">
-                    </div>
+                                            <img src="https://placehold.co/600x400/333333/FFFFFF?text=재화+이미지" alt="새로운 재화 이미지">
+                </div>
                 </div>
                 <!-- 유의사항 박스 위치 이동 -->
                 <div class="notice-box">
                     <p><strong>NOTICE</strong> 
                     <br> - 재화 전환(골드,루비) 비율은 1:1 이며, 점검 이후 접속 시 자동 전환됩니다.
-                    <br> - 기존 보유하신 골드와 루비는 포커에서 그대로 사용 가능합니다.
+                    <br> - 기존 보유하신 골드와 루비는 사라지지 않으며, 포커에서 그대로 사용 가능합니다.
                     <br> - 섯다에서는 피망보너스 적립 및 사용이 불가능합니다.
                     </p>
                 </div>
@@ -177,10 +161,10 @@
                 <div class="faq-content">
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>골드가 금으로, 루비가 다이아로 전환된다고 했는데, 내 자산은 어디서 확인할 수 있나요?</span>
+                            <span>골드가 금으로, 루비가 다이아로 전환된다고 했는데, 어떻게 확인할 수 있나요?</span>
                         </div>
                         <div class="faq-answer">
-                            점검 이후 각 게임(포커/섯다) 내 자산 메뉴에서 변경된 금액을 확인하실 수 있습니다.
+                            점검 이후 섯다 게임에 접속하시면 재화 복사 팝업창이 노출되며, 복사되는 자산이 얼마인지 직접 확인하실 수 있습니다.
                         </div>
                     </div>
                     <div class="faq-item">
@@ -188,7 +172,15 @@
                             <span>재화 전환은 여러 번 할 수 있나요?</span>
                         </div>
                         <div class="faq-answer">
-                            재화 전환(골드, 루비)은 점검 이후 접속 시 최초 1회 만 진행되며, 중복 전환은 불가능합니다.
+                            재화 전환(골드, 루비)은 점검 이후 접속 시 최초 1회 만 진행됩니다.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>선물함에 보관했던 재화는 어떻게 되나요?</span>
+                        </div>
+                        <div class="faq-answer">
+                            선물함의 골드, 루비 모두 그대로 금과 다이아로 전환됩니다. 
                         </div>
                     </div>
                     <div class="faq-item">
@@ -196,7 +188,7 @@
                             <span>티켓월드 서비스가 종료되면 기존에 보유한 티켓은 어떻게 되나요?</span>
                         </div>
                         <div class="faq-answer">
-                            섯다에서의 티켓월드 서비스는 종료되지만, '피망 포커'에서 계속 사용이 가능합니다.
+                            섯다에서의 티켓월드 서비스는 아쉽게도 종료되지만, '피망 포커'에서 계속 사용이 가능합니다.
                         </div>
                     </div>
                     <div class="faq-item">
@@ -205,7 +197,7 @@
                         </div>
                         <div class="faq-answer">
                              클로버는 피망 뉴맞고와 섯다에서 함께 사용하실 수 있는 재화입니다. 
-                            <br>섯다에서는 오늘의 운세, 프로필 구매에 사용하실 수 있으며, 피망 뉴맞고 행복마트에서도 사용 가능합니다.
+                            <br>섯다에서는 오늘의 운세, 프로필 구매에 사용하실 수 있으며, 피망 뉴맞고 행복마트에서 사용 가능합니다.
                         </div>
                     </div>
                     <div class="faq-item">
@@ -219,18 +211,11 @@
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>카카오 버전 섯다도 게임 재화가 전환되나요?</span>
+                            <span>카카오 버전 섯다을 플레이하는 유저입니다. 카카오 버전 포커의 재화도 섯다로 복사되나요?</span>
                         </div>
                         <div class="faq-answer">
-                            아니오, 카카오 버전은 재화를 공유하지 않으므로, 전환 대상이 아닙니다.
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>해지 후 다시 클래스를 결제하면 혜택이 연속 적용되나요?</span>
-                        </div>
-                        <div class="faq-answer">
-                            해지 후 재결제 시 연속 혜택 적용 여부는 케이스에 따라 다를 수 있으니, 자세한 사항은 고객센터로 문의해 주시기 바랍니다.
+                            아니오, 카카오 버전은 계정 정보가 서로 달라 재화를 공유하지 않으므로, 복사가 되지 않습니다.
+                            <br>다만, 카카오 섯다에서 보유하신 골드와 루비 재화는 '금'과 '다이아'로 각각 전환됩니다.
                         </div>
                     </div>
                 </div>
@@ -314,35 +299,7 @@
     startSlideShow();
 });
 
-    // 햄버거 메뉴 동작
-    const menuToggle = document.querySelector('.menu-toggle');
-    const closeMenu = document.querySelector('.close-menu');
-    const sideMenu = document.querySelector('.side-menu');
-    const updateList = document.querySelectorAll('.update-list li');
 
-    menuToggle.addEventListener('click', () => {
-        sideMenu.classList.add('active');
-    });
-
-    closeMenu.addEventListener('click', () => {
-        sideMenu.classList.remove('active');
-    });
-
-    // 메뉴 항목 클릭 이벤트
-    updateList.forEach(item => {
-        item.addEventListener('click', () => {
-            // 활성화된 항목 변경
-            updateList.forEach(li => li.classList.remove('active'));
-            item.classList.add('active');
-            
-            // 여기에 각 월별 콘텐츠를 보여주는 로직 추가 예정
-            const month = item.getAttribute('data-month');
-            console.log(`${month}월 업데이트 내용 표시`);
-            
-            // 모바일에서 메뉴 닫기
-            sideMenu.classList.remove('active');
-        });
-    });
 
     // FAQ 토글 버튼 동작
     const faqToggle = document.querySelector('.faq-toggle');
@@ -358,9 +315,11 @@
     });
 </script>
     </div>
-    <button id="topButton" class="top-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <button id="topButton" class="top-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <i class="fas fa-chevron-up"></i>
         <span>TOP<span class="small-text"></span></span>
     </button>
+
+
 </body>
 </html>

@@ -131,8 +131,15 @@ section {
     flex-direction: row;
 }
 
-.text-content, .image-content {
-    flex: 1;
+.text-content {
+    flex: 1.2; /* 텍스트 영역 비율 증가 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-content {
+    flex: 0.8; /* 이미지 영역 비율 감소 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -236,6 +243,42 @@ section {
     object-fit: cover;
     border-radius: 8px;
     background-color: var(--card-bg-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(197, 164, 126, 0.1);
+    position: relative;
+}
+
+.image-content {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, rgba(197, 164, 126, 0.1), rgba(138, 116, 91, 0.1));
+}
+
+.image-content::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.image-content::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 1px solid var(--primary-color);
+    border-radius: 11px;
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 /* BI 이미지는 예외 처리 */
@@ -306,11 +349,12 @@ section {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 12px 25px;
+    padding: 12px 20px;
     border-radius: 8px;
     border: 1px solid var(--primary-color);
     text-align: left;
-    width: 200px;
+    width: 240px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .btn.btn-store:hover {
@@ -533,11 +577,10 @@ section {
     }
     
     .btn.btn-store {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-        padding: 10px 20px;
-    }
+    width: 280px; /* 모바일에서도 동일한 너비 유지 */
+    justify-content: center;
+    padding: 10px 20px;
+}
     
     .store-icon {
         font-size: 28px;
@@ -552,95 +595,7 @@ section {
     }
 }
 
-/* 햄버거 메뉴 스타일 */
-.menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    background: transparent;
-    border: none;
-    color: var(--primary-color);
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    transition: all 0.3s ease;
-}
 
-.menu-toggle:hover {
-    transform: scale(1.1);
-}
-
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    width: 300px;
-    height: 100vh;
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1000;
-    transition: left 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.side-menu.active {
-    left: 0;
-}
-
-.menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid var(--primary-color);
-}
-
-.menu-header h3 {
-    color: var(--primary-color);
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.close-menu {
-    background: transparent;
-    border: none;
-    color: var(--primary-color);
-    font-size: 20px;
-    cursor: pointer;
-    padding: 5px;
-    transition: all 0.3s ease;
-}
-
-.close-menu:hover {
-    transform: scale(1.1);
-}
-
-.update-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.update-list li {
-    padding: 15px 20px;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(197, 164, 126, 0.1);
-}
-
-.update-list li:hover {
-    background: rgba(197, 164, 126, 0.1);
-    color: var(--primary-color);
-}
-
-.update-list li.active {
-    background: rgba(197, 164, 126, 0.2);
-    color: var(--primary-color);
-    font-weight: 700;
-}
 
 /* FAQ 섹션 스타일 */
 .faq-section {
@@ -855,4 +810,24 @@ section {
     .top-button .small-text {
         font-size: 8px;
     }
+}
+/* 푸터를 감싸는 wrapper 영역 */
+div[class^="wrapper"] {
+    background: transparent !important;
+}
+
+/* 푸터 자체 */
+div[class^="footer"] {
+    background: transparent !important;
+}
+
+/* GNB 부모와 메인 컨테이너 투명하게 */
+div[class^="gnbPlaceholder"],
+div[class^="gnb"] {
+    background: transparent !important;
+}
+
+/* GNB 내부 요소들 중, 로고(pmang)를 "제외한" 나머지 요소들의 배경만 투명하게 */
+div[class^="gnb"] *:not([class^="pmang"]) {
+    background: transparent !important;
 }
