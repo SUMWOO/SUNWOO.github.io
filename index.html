@@ -4,8 +4,25 @@
     <script src="https://static.pmang.com/lib/pmang-gnb-footer.js" charset="UTF-8"></script>
     <script>
     pmang.ui.domReady(function() {
-    pmang.ui.gnb({ type: "simple-pmang" }); // GNB 추가
-    pmang.ui.footer({ type: 'narrow', simple: true });
+        // 모바일 환경 체크
+        var isMobile = window.innerWidth <= 768;
+        
+        pmang.ui.gnb({ type: "simple-pmang" }); // GNB 추가
+        pmang.ui.footer({ 
+            type: isMobile ? 'mobile' : 'narrow',  // 모바일일 경우 mobile 타입으로 변경
+            simple: true,
+            responsive: true  // 반응형 옵션 활성화
+        });
+        
+        // 화면 크기 변경 시 푸터 타입 업데이트
+        window.addEventListener('resize', function() {
+            var isMobile = window.innerWidth <= 768;
+            pmang.ui.footer({ 
+                type: isMobile ? 'mobile' : 'narrow',
+                simple: true,
+                responsive: true
+            });
+        });
     });
     </script>
     <meta charset="UTF-8">
