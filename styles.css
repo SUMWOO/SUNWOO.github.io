@@ -17,6 +17,8 @@ body {
     color: var(--text-color);
     line-height: 1.7;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* 배경 이미지 래퍼 */
@@ -43,6 +45,8 @@ body::before {
     margin: 0 auto;
     padding: 10px 20px; /* 상단 패딩 축소 */
     background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* 섹션 배경색 유지를 위한 추가 스타일 */
@@ -453,10 +457,11 @@ section {
 /* 모바일 반응형 디자인 */
 @media (max-width: 768px) {
     .notice-box {
-        padding: 15px;
-        margin-top: 20px;
-        max-width: calc(100% + 40px); /* 모바일에서는 패딩 값 조정 */
-    }
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
     
     .notice-box p {
         font-size: 0.9rem;
@@ -577,9 +582,11 @@ section {
     }
     
     .btn.btn-store {
-    width: 280px; /* 모바일에서도 동일한 너비 유지 */
+    width: 100%;
+    max-width: 280px; /* 모바일에서도 동일한 너비 유지 */
     justify-content: center;
     padding: 10px 20px;
+    box-sizing: border-box;
 }
     
     .store-icon {
