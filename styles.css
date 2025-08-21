@@ -123,6 +123,10 @@ section {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .section-main-content {
@@ -244,6 +248,7 @@ section {
 .slide img,
 .image-content img {
     width: 100%;
+    max-width: 100%;
     height: 280px;
     object-fit: cover;
     border-radius: 8px;
@@ -251,6 +256,7 @@ section {
     border: 1px solid var(--primary-color);
     box-shadow: 0 0 20px rgba(197, 164, 126, 0.1);
     position: relative;
+    box-sizing: border-box;
 }
 
 .image-content {
@@ -457,11 +463,25 @@ section {
 
 /* 모바일 반응형 디자인 */
 @media (max-width: 768px) {
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     .notice-box {
         padding: 15px;
-        margin-top: 20px;
-        width: 100%; /* 너비를 100%로 제한 */
-        box-sizing: border-box; /* 패딩을 너비에 포함 */
+        margin: 20px 0;
+        width: 100%;
+        box-sizing: border-box;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     .notice-box p {
@@ -713,6 +733,15 @@ section {
 
 @media (max-width: 768px) {
     .faq-section {
+        padding: 20px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .faq-content {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         padding: 20px;
     }
 
