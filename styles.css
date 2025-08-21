@@ -614,7 +614,8 @@ section {
 }
 
 .faq-toggle {
-    width: 280px;
+    width: 100%; /* 고정값 280px 대신 100%로 변경 */
+    box-sizing: border-box; /* 패딩이 너비를 넘지 않도록 설정 */
     background: linear-gradient(to right, rgba(197, 164, 126, 0.1), rgba(138, 116, 91, 0.1));
     border: 1px solid var(--primary-color);
     border-radius: 8px;
