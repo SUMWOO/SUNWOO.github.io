@@ -104,6 +104,10 @@ body::before {
     flex-direction: column;
     gap: 30px; /* 섹션 간격 축소 */
     margin-top: -10px; /* 위로 올림 */
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 section {
@@ -111,6 +115,10 @@ section {
     flex-direction: row;
     gap: 30px;
     align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .update-section {
@@ -122,6 +130,9 @@ section {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .section-main-content {
@@ -129,6 +140,8 @@ section {
     gap: 30px;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .section-main-content {
@@ -147,6 +160,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .icon-title {
@@ -652,10 +667,12 @@ section {
     display: none;
     margin-top: 20px;
     width: 100%;
+    max-width: 100%;
     background: rgba(26, 26, 26, 0.6);
     border-radius: 12px;
     padding: 30px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .faq-header {
