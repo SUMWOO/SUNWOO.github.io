@@ -61,28 +61,13 @@
                     <p>품격 있는 비주얼로 새롭게 태어났습니다.</p>
                     <ul>
                         <li> 몰입감을 극대화하는 <span class="highlight-new">매혹적</span>인 캐릭터</li>
-                        <li> 전통미와 <span class="highlight-new">스타일리시함</span>의 조화</li>
-                        <li> <span class="highlight-new">세련</span>된 게임 화면, 직관적이고 간결한 UI </li>
+                        <li> 전통미와 <span class="highlight-new"> 간결함을 살린  </span>로비 화면</li>
+                        <li> <span class="highlight-new">직관적이고 간결한 </span>화면 구성 </li>
                     </ul>
                 </div>
                 <div class="image-content">
-                    <div class="slider-container">
-                        <div class="slider">
-                            <div class="slide">
-                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터1" alt="섯다 캐릭터1">
-                            </div>
-                            <div class="slide">
-                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터2" alt="섯다 캐릭터2">
-                            </div>
-                            <div class="slide">
-                                <img src="https://placehold.co/600x400/333333/FFFFFF?text=섯다+캐릭터3" alt="섯다 캐릭터3">
-                            </div>
-                        </div>
-                        <div class="slider-nav">
-                            <button class="slider-dot active" data-index="0"></button>
-                            <button class="slider-dot" data-index="1"></button>
-                            <button class="slider-dot" data-index="2"></button>
-                        </div>
+                    <div class="single-image">
+                        <img src="images/s1-cha1.png" alt="섯다 캐릭터1">
                     </div>
                 </div>
             </section>
@@ -92,18 +77,20 @@
                 <div class="section-main-content">
                     <div class="text-content">
                         <div class="icon-title">
-                            <h3>게임 재화, 이렇게 바뀝니다.</h3>
+                            <h3>게임 재화, 이렇게 바뀌었습니다.</h3>
                         </div>
                         <p>이제 포커와 재화를 공유하지 않고, 섯다 전용 재화인 <span class="highlight-new">'금'</span>을 사용합니다.</p>
                         <ul>
-                            <li><span class="highlight"> <i class="fas fa-coins benefit-icon"></i>기존 골드 </span>  →  <span class="highlight-new">금</span> 으로 전환됩니다. </li>
-                            <li><span class="highlight"> <i class="fas fa-gem benefit-icon"></i>기존 루비 </span>  →  <span class="highlight-new">다이아</span> 로 전환됩니다. (뉴맞고와 함께 사용)</li>
-                            <li><span class="highlight"> <i class="fas fa-clover benefit-icon"></i>클로버 </span> → <span class="highlight-new">신규추가</span> (뉴맞고와 함께 사용)</li>
-                            <li><span class="highlight">  <i class="fas fa-ticket-alt benefit-icon"></i>기존 티켓 </span> → <span class="highlight-new">사용 종료</span> (포커에서 사용 가능)</li>
+                            <li><i class="fas fa-coins benefit-icon"></i>기존 골드  →  <span class="highlight-new">금</span> 으로 전환됩니다. </li>
+                            <li><i class="fas fa-gem benefit-icon"></i>기존 루비  →  <span class="highlight-new diamond-text">다이아</span> 로 전환됩니다. (뉴맞고와 함께 사용)</li>
+                            <li><i class="fas fa-clover benefit-icon"></i>클로버 → <span class="highlight-new clover-text">신규추가</span> (뉴맞고와 함께 사용)</li>
+                            <li><i class="fas fa-ticket-alt benefit-icon"></i>기존 티켓 → <span class="highlight-new">사용 종료</span> (포커에서 사용 가능)</li>
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img src="https://placehold.co/600x400/333333/FFFFFF?text=재화+이미지" alt="새로운 재화 이미지">
+                        <div class="single-image">
+                            <img src="images/s2-cha1.png" alt="새로운 재화 이미지">
+                        </div>
                     </div>
                 </div>
                 <!-- 유의사항 박스 위치 이동 -->
@@ -141,8 +128,8 @@
                 </p>
             </div>
         </div>
-         <div class="image-content">
-            <img src="https://placehold.co/600x400/333333/FFFFFF?text=클래스+상품" alt="클래스 상품 이미지">
+         <div class="single-image class-design">
+            <img src="images/s3-class1.png" alt="클래스 상품 이미지">
         </div>
     </div>
 </section>
@@ -163,7 +150,9 @@
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img src="https://placehold.co/600x400/333333/FFFFFF?text=혜택+안내" alt="혜택 안내 이미지">
+                        <div class="single-image last-section">
+                            <img src="images/s4-cha1.png" alt="혜택 안내 이미지">
+                        </div>
                     </div>
                 </div>
                 
@@ -277,53 +266,7 @@
             </div>
         </footer>
         <script>
-            // 슬라이더 기능 구현
-            document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    let currentSlide = 0;
-    let slideInterval;
 
-    // 슬라이드 이동 함수
-    function goToSlide(index) {
-        currentSlide = index;
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        // 도트 활성화 상태 업데이트
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentSlide].classList.add('active');
-    }
-
-    // 자동 슬라이드 시작
-    function startSlideShow() {
-        slideInterval = setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            goToSlide(currentSlide);
-        }, 3000);
-    }
-
-    // 자동 슬라이드 정지
-    function stopSlideShow() {
-        clearInterval(slideInterval);
-    }
-
-    // 도트 클릭 이벤트
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            stopSlideShow();
-            startSlideShow(); // 클릭 후 자동 슬라이드 재시작
-        });
-    });
-
-    // 마우스 오버시 자동 슬라이드 정지
-    slider.addEventListener('mouseenter', stopSlideShow);
-    slider.addEventListener('mouseleave', startSlideShow);
-
-    // 초기 자동 슬라이드 시작
-    startSlideShow();
-});
 
 
 
